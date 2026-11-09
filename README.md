@@ -1,4 +1,4 @@
-# Shiu Toolkit
+# Shiu Bounds Toolkit
 
 A Lean 4 formalization of a fixed-quarter Brun–Titchmarsh-type bound
 for nonnegative multiplicative arithmetic functions, with importable
@@ -7,9 +7,9 @@ ordinary short intervals at modulus one, and a restricted two-parameter
 region.
 
 **License:** Apache-2.0, with preserved third-party notices in
-[NOTICE](NOTICE). This README describes the intended standalone public
-source tree. Its preparation does not itself authorize uploading source
-or submitting it to Palomar.
+[NOTICE](NOTICE). This README documents the publicly available proof
+source. Making a source repository public is separate from publicly
+registering its formalization with Palomar.
 
 ## The mathematical results
 
@@ -102,9 +102,16 @@ The source candidate corresponding to private development commit
 Ubuntu source build, all eight consumer examples and principal axiom
 audits, and the real Palomar Comparator using NanoDa, con-ron and Lean's
 default kernel on November 9, 2026. These private prepublication checks
-are **not** a substitute for replay on the eventual public release
-commit. See [RELEASE_PROVENANCE.md](RELEASE_PROVENANCE.md) for the exact
-public reproducibility protocol and evidence boundary.
+are **not** a substitute for an official replay of a public commit.
+The original public source commit
+`c49a08ac26c9efacdcc55d3c7a4cf2db03e0eca8` subsequently passed
+the [official predictive preflight](https://github.com/charliedorsey/shiu-toolkit-palomar-release/actions/runs/42685020474)
+and the [Palomar registry-side mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42692549841)
+on November 9, 2026. Its private AI editorial review found no blocking
+problem but identified a nonblocking disclosure gap, addressed in this
+metadata revision. Neither the original checks nor the review automatically
+certify a later commit. See [RELEASE_PROVENANCE.md](RELEASE_PROVENANCE.md)
+for the verification boundary.
 
 For a trusted Linux environment with the Palomar Comparator toolchain
 installed and Bubblewrap enabled, run:
@@ -140,5 +147,6 @@ development, source adaptations, testing, review, and documentation.
 The bibliographic author field records human responsibility, not a
 claim of exclusive copyright in autonomous machine-generated text.
 
-This source package is not a Palomar registry listing or journal publication.
-Public preflight and formal registry submission have separate approval steps.
+This source repository and its verification runs are not a public Palomar
+registry entry or journal publication. Registration and publication require
+separate, explicit approval by the responsible maintainer.

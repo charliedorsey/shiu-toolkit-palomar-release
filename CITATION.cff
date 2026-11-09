@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite this software package and its mathematical source."
-title: "Shiu Toolkit: Lean Formalization of a Fixed-Quarter Brun–Titchmarsh-Type Bound"
+title: "Shiu Bounds Toolkit: Lean Formalization of a Fixed-Quarter Brun–Titchmarsh-Type Bound"
 authors:
   - family-names: "Dorsey"
     given-names: "Charlie"

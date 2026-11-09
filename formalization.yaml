@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 # Palomar v0.4 candidate metadata for standalone proof source.
-# A green private verification court is NOT registry submission.
+# Source verification and closed review are separate from public registry registration.
 version: "v0.4"
 project:
-  name: "Shiu Toolkit"
+  name: "Shiu Bounds Toolkit"
   description: >-
     Formal Lean 4 fixed-quarter Brun–Titchmarsh-type estimate for
     nonnegative multiplicative weights without squarefree support,
@@ -90,6 +90,14 @@ fidelity:
     terminal fixes alpha=beta=1/4, natural x,y, and a particular
     B*n^(1/1280) bound; its upper-right quadrant is a monotonicity
     consequence with a fixed B. Modulus one is a derived corollary.
+    Comparator strictly matches the three advertised theorem statements.
+    Its four specified helper definition targets (Shiu.smallPrimeConstant,
+    PaperB.M4B.classicalClassIVRankinH,
+    PaperB.M4B.corvethClassicalClassIConstant, and
+    PaperB.M4B.classicalShiuClassIVConstant) are compared by their
+    types, not by the bodies of their independently elaborated definitions.
+    A separate source-text mirror check confirms corresponding text,
+    but does not establish kernel-certified identity of these bodies.
 review:
   status: "agent-reviewed"
   reviewers: ["Orisel (independent AI referee)"]
@@ -100,8 +108,13 @@ review:
     candidate 681e355148c4bd1ac656d45ed9de8598c4bdc4f9 passed
     GitHub-hosted Linux compilation, all 8 examples, standard-axiom audits,
     real Palomar Comparator, con-ron and NanoDa on November 9, 2026.
-    Not human peer review; no public-repository preflight or Palomar
-    registry submission has been conducted.
+    Not human peer review. Public source commit
+    c49a08ac26c9efacdcc55d3c7a4cf2db03e0eca8 passed the official
+    Palomar predictive preflight and closed-submission mechanical
+    verification on November 9, 2026. Its private automated editorial
+    review reported no blocking problem and a nonblocking structured
+    disclosure warning addressed by this revision. Those results belong
+    to the earlier commit, not automatically to later metadata revisions.
 
 alignment:
   namespace: "Shiu.API"

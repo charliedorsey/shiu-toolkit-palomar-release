@@ -1,6 +1,6 @@
 # Release verification and provenance
 
-This file accompanies the standalone Shiu Toolkit source distribution.
+This file accompanies the standalone Shiu Bounds Toolkit source distribution.
 It is reproducibility guidance, not a claim that the public registry has
 accepted or indexed the work.
 
@@ -18,11 +18,16 @@ con-ron accepted 45,799 exported declarations, and NanoDa and Lean's
 default kernel both accepted the Solution. Independent AI mathematical
 review was performed separately; no human journal peer review is claimed.
 
-**Important:** the successful court ran on a private repository. Its
-log may not be accessible to readers of the public source. The public
-repository needs its **own public build and Palomar predictive preflight**
-for any definitive public verification claim. A different public commit
-must not inherit the private source SHA's verification status by fiat.
+**Public release evidence:** the private verification court is not itself
+evidence for a different Git tree. The corrected public source
+commit `c49a08ac26c9efacdcc55d3c7a4cf2db03e0eca8` subsequently passed
+the [official Palomar predictive preflight](https://github.com/charliedorsey/shiu-toolkit-palomar-release/actions/runs/42685020474)
+and [Palomar closed-submission mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42692549841)
+on November 9, 2026. The associated automated editorial review reported
+no blocking issues and one nonblocking fidelity-metadata disclosure
+warning, addressed in the present metadata revision. The reviewer
+report and public registration remain separate; this revision must be
+verified under its own immutable commit.
 
 ## Reproducing the code checks
 
