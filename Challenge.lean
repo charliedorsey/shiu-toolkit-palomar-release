@@ -1,19 +1,115 @@
 module
 
 public import Mathlib
-public import ChallengeDefs.Envelope
-public import ChallengeDefs.Progressions
-public import ChallengeDefs.Constant
 
 public section
 
 /-!
-# SHIU exact three-theorem Challenge
-The only transitive sources are Mathlib and the nine audited
-ChallengeDefs files consisting solely of copied definitions.
-No substantive SHIU theorem or proof module is imported here.
-The deliberate sorry proofs occur only in this Challenge.
+# SHIU exact Palomar Challenge (self-contained canonical source)
+Source-aligned shared declarations inlined for isolated canonical build.
+The three theorem proof holes are deliberately confined to Challenge.
 -/
+namespace Shiu
+
+open scoped BigOperators
+open ArithmeticFunction
+
+structure ClassicalEnvelope (f : ArithmeticFunction ℝ) (A : ℝ) : Prop where
+  multiplicative : f.IsMultiplicative
+  nonnegative : ∀ n : ℕ, 0 ≤ f n
+  A_nonnegative : 0 ≤ A
+  prime_power : ∀ p m : ℕ, p.Prime → 1 ≤ m → f (p ^ m) ≤ A ^ m
+  growth : ∀ ε : ℝ, 0 < ε →
+    ∃ B : ℝ, 0 < B ∧ ∀ n : ℕ, 1 ≤ n → f n ≤ B * (n : ℝ) ^ ε
+
+end Shiu
+
+namespace Shiu
+
+open scoped BigOperators
+open ArithmeticFunction
+
+@[expose] noncomputable def fixedPrimePowerCutoff (A D : ℝ) : ℕ :=
+  max 5 ⌈2 * A * Real.exp D⌉₊
+
+end Shiu
+
+namespace Shiu
+
+open scoped BigOperators
+open ArithmeticFunction
+
+@[expose] noncomputable def smallPrimeConstant (Q : ℕ) (B : ℝ) : ℝ :=
+  ∏ q ∈ Nat.primesLE Q,
+    (1 + B / (1 - (q : ℝ) ^ (-(1/2 : ℝ))))
+
+end Shiu
+
+namespace PaperB.M4B
+
+open scoped BigOperators
+
+@[expose] noncomputable def classicalClassIVRankinD (A : ℝ) : ℝ :=
+  960 * Real.log (1 + A) + 24
+
+@[expose] noncomputable def classicalClassIVRankinH (A : ℝ) : ℝ :=
+  ((4 * A * Real.log 4) / Real.log 2) *
+    Real.exp (classicalClassIVRankinD A)
+
+end PaperB.M4B
+
+namespace PaperB.M4B
+
+open scoped BigOperators
+
+@[expose] noncomputable def corvethClassicalClassIConstant (A B : ℝ) : ℝ :=
+  (4 * (1 + A) ^ 320) *
+    Shiu.smallPrimeConstant (Shiu.fixedPrimePowerCutoff A 1) B *
+      Real.exp (((4 * A * Real.log 4) / Real.log 2) * Real.exp 1 +
+        2 * A ^ 2 * Real.exp 2)
+
+end PaperB.M4B
+
+namespace PaperB.M4B
+
+open scoped BigOperators
+
+@[expose] noncomputable def classicalShiuClassIVConstant (A B : ℝ) : ℝ :=
+  96 * Shiu.smallPrimeConstant (Shiu.fixedPrimePowerCutoff A (classicalClassIVRankinD A)) B *
+    Real.exp (2*A^2*Real.exp (2*classicalClassIVRankinD A) + classicalClassIVRankinH A)
+
+end PaperB.M4B
+
+namespace PaperB.M4B
+
+open scoped BigOperators
+
+@[expose] noncomputable def primeMass (f : ArithmeticFunction ℝ) (X k : ℕ) : ℝ :=
+  ∑ p ∈ Nat.primesLE X with ¬ p ∣ k, f p / p
+
+end PaperB.M4B
+
+namespace Shiu.API
+
+open scoped BigOperators
+
+noncomputable abbrev primeMass (f : ArithmeticFunction ℝ)
+    (x k : ℕ) : ℝ := PaperB.M4B.primeMass f x k
+
+@[expose] def progressionSum (f : ArithmeticFunction ℝ) (x y k a : ℕ) : ℝ :=
+  ∑ n ∈ Finset.Ioc (x-y) x, if n ≡ a [MOD k] then f n else 0
+
+end Shiu.API
+
+namespace Shiu.API
+
+open scoped BigOperators
+
+@[expose] noncomputable def classicalConstant (A B : ℝ) : ℝ :=
+  961 * PaperB.M4B.corvethClassicalClassIConstant A B +
+  161 * PaperB.M4B.classicalShiuClassIVConstant A B + 56330 * B
+
+end Shiu.API
 
 namespace Shiu.API
 

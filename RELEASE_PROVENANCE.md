@@ -33,9 +33,16 @@ must not inherit the private source SHA's verification status by fiat.
 5. For a trusted Linux machine with Lean's comparator tooling and
    Bubblewrap configured, run `bash scripts/verify-comparator.sh`.
 
-The nine Mathlib-only `ChallengeDefs` modules are shared source-exact
-definition dependencies for both the independent Challenge and proved
-Solution. The three `sorry` placeholders in Challenge are deliberate
+The canonical `Challenge.lean` imports only Mathlib, with no
+candidate-local modules. Its helper declarations are source-text mirrors
+of the nine Mathlib-only `ChallengeDefs` modules used by the proved source.
+Run `python3 scripts/check_canonical_challenge.py` to independently check
+the mirrors. Because inlining into another Lean module can change
+private elaboration witnesses, Comparator's four `definition_names`
+targets match definition types but do not compare definition bodies.
+That limitation must be distinguished from strict comparison of the
+three theorem statements and from the separate source-text test.
+The three `sorry` placeholders in Challenge are deliberate
 contract holes, **not** holes in the proved library or Solution.
 
 ## Credits and scope

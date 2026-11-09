@@ -23,4 +23,6 @@ for file in ['LICENSE','NOTICE','CITATION.cff','formalization.yaml','README.md',
              'RELEASE_PROVENANCE.md','comparator.json','lakefile.toml',
              'lake-manifest.json','lean-toolchain','Solution.lean']:
     if not (ROOT/file).is_file():raise SystemExit('Missing release file '+file)
+if not (ROOT/'scripts/check_canonical_challenge.py').is_file():
+    raise SystemExit('Missing canonical Challenge source fidelity audit')
 print('PUBLIC_SOURCE_STRUCTURE_PASS',len(items),'module-format files, 3 deliberate Challenge holes')

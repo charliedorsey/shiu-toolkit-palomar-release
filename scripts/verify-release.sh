@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 scripts/check_release_sources.py
+python3 scripts/check_canonical_challenge.py
 lake exe cache get
 lake build ShiuToolkit Challenge Solution
 for file in examples/*.lean; do

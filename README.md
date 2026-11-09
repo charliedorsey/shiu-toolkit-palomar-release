@@ -80,9 +80,21 @@ for f in examples/*.lean; do lake env lean "$f"; done
 The three advertised theorems are defined and proved in the library;
 the independent `Challenge.lean` contains their exact statements with
 three **deliberate placeholders**, as required by the Comparator format.
-`ChallengeDefs/` supplies nine Mathlib-only modules containing shared
-definitional dependencies, imported by both Challenge and Solution.
-The proved source and Solution have **zero unresolved `sorry`**;
+`Challenge.lean` imports **only Mathlib**, so the official Palomar
+canonical Challenge compiler does not need to trust any project-local
+imports. It mirrors the shared definitions from nine audited
+`ChallengeDefs/` source modules, which remain imported by the proved
+source. Run `python3 scripts/check_canonical_challenge.py` to check
+the copied source text against those modules.
+
+To accommodate different module-local elaboration witnesses,
+`comparator.json` also names four elaboration-sensitive helper definitions as
+*definition targets*. Comparator checks their types but deliberately
+does **not** check their bodies for identity. The source-text mirror
+test is an additional integrity check, not a substitute for a
+kernel-certified equivalence of independently elaborated definitions.
+The three advertised theorem statements are still strict Comparator
+theorem targets. The proved source and Solution have **zero unresolved `sorry`**;
 the three Challenge placeholders do not count as proof claims.
 
 The source candidate corresponding to private development commit
