@@ -1,0 +1,32 @@
+name = "shiu_public"
+version = "0.1.0"
+defaultTargets = ["ShiuToolkit"]
+
+[[lean_lib]]
+name = "ShiuToolkit"
+srcDir = "src"
+roots = ["PaperB", "Orienne", "ShiuPublic", "Shiu", "EiravelActualFirstLargeBase", "EiravelBaseProductTransport", "EiravelBaseShellEndpoints", "EiravelClassIBranches", "EiravelClassIIISmoothPhysical", "EiravelClassIIISubsum", "EiravelClassISubsum", "EiravelClassIVInnerScaled", "EiravelClassIVPrefixMembership", "EiravelClassIVSubsum", "EiravelCrossingModulus", "EiravelDivisorOrder", "EiravelExceptionSubsum", "EiravelFixedConstantException", "EiravelFourOvercounts", "EiravelFullPhysicalShell", "EiravelGeneralPowerAP", "EiravelGrowthLog", "EiravelLargeBaseLeast", "EiravelLowBaseReciprocal", "EiravelNonsmoothClassIVWitness", "EiravelPhysicalSuffixShellRough", "EiravelScalarCombination", "EiravelScalarGeometry", "EiravelShellCeilingTransport", "EiravelShellLower", "EiravelShiuTargetException", "EiravelShortEligibleException", "EiravelSourceWeightedAssembly", "EiravelSquareRootBridge", "EiravelSuffixRough", "EiravelUnrestrictedConditionalFinal", "EiravelUnrestrictedFourWay", "EiravelWeightedFourWayFinite", "ShiuBaseOrderR0006"]
+globs = ["PaperB.+", "Orienne.+", "ShiuPublic", "ShiuPublic.+", "Shiu", "Shiu.+", "EiravelActualFirstLargeBase", "EiravelBaseProductTransport", "EiravelBaseShellEndpoints", "EiravelClassIBranches", "EiravelClassIIISmoothPhysical", "EiravelClassIIISubsum", "EiravelClassISubsum", "EiravelClassIVInnerScaled", "EiravelClassIVPrefixMembership", "EiravelClassIVSubsum", "EiravelCrossingModulus", "EiravelDivisorOrder", "EiravelExceptionSubsum", "EiravelFixedConstantException", "EiravelFourOvercounts", "EiravelFullPhysicalShell", "EiravelGeneralPowerAP", "EiravelGrowthLog", "EiravelLargeBaseLeast", "EiravelLowBaseReciprocal", "EiravelNonsmoothClassIVWitness", "EiravelPhysicalSuffixShellRough", "EiravelScalarCombination", "EiravelScalarGeometry", "EiravelShellCeilingTransport", "EiravelShellLower", "EiravelShiuTargetException", "EiravelShortEligibleException", "EiravelSourceWeightedAssembly", "EiravelSquareRootBridge", "EiravelSuffixRough", "EiravelUnrestrictedConditionalFinal", "EiravelUnrestrictedFourWay", "EiravelWeightedFourWayFinite", "ShiuBaseOrderR0006"]
+
+# Palomar Comparator entry points: Challenge is Mathlib-only; Solution
+# imports and kernel-reuses the complete Shiu proof library.
+[[lean_lib]]
+name = "ChallengeDefs"
+srcDir = "."
+roots = ["ChallengeDefs"]
+globs = ["ChallengeDefs.+"]
+
+[[lean_lib]]
+name = "Challenge"
+srcDir = "."
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+srcDir = "."
+roots = ["Solution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.35.0"

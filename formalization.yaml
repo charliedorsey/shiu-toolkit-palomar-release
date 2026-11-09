@@ -1,0 +1,132 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# Palomar v0.4 candidate metadata for standalone proof source.
+# A green private verification court is NOT registry submission.
+version: "v0.4"
+project:
+  name: "Shiu Toolkit"
+  description: >-
+    Formal Lean 4 fixed-quarter Brun–Titchmarsh-type estimate for
+    nonnegative multiplicative weights without squarefree support,
+    with a separate fixed B*n^(1/1280) growth witness. Includes
+    the ordinary modulus-one short-interval corollary with a factor
+    of nine in the bound, and a uniform upper-right parameter-quadrant
+    consequence 1/4 <= alpha,beta < 1/2.
+  authors: ["Charlie Dorsey"]
+  license: "Apache-2.0"
+  responsible_maintainers: ["Charlie Dorsey"]
+classification:
+  arxiv: ["math.NT", "cs.LO"]
+  msc2020: ["11N37", "11N13", "68V20"]
+sources:
+  - title: "A Brun-Titchmarsh theorem for multiplicative functions"
+    authors: ["Peter Man-Kit Shiu"]
+    type: "article"
+    relationship: "independently-proves"
+    location: "Journal fuer die reine und angewandte Mathematik 313 (1980), 161-170"
+    note: >-
+      The fixed-quarter, fixed-growth-witness Lean result is an explicit
+      specialization, not Shiu's full original two-parameter range.
+  - title: "Studies in Multiplicative Number Theory"
+    authors: ["Peter Man-Kit Shiu"]
+    type: "thesis"
+    relationship: "background"
+    id: "https://eprints.nottingham.ac.uk/28304/1/281269.pdf"
+    location: "University of Nottingham, 1980, chapter 3"
+    note: "Bibliographic reference only; no right to reproduce scanned pages established."
+  - title: "selberg-sieve4"
+    authors: ["Arend Mellendijk"]
+    type: "formalization"
+    relationship: "adapts"
+    id: "https://github.com/amellendijk/selberg-sieve4"
+    note: >-
+      Source headers in three PaperB/M4A modules credit adapted
+      Apache-2.0 material and retain modification notices.
+  - title: "Mathlib: SelbergSieve.lean, including PR #27707"
+    authors: ["Arend Mellendijk", "Mathlib contributors"]
+    type: "formalization"
+    relationship: "adapts"
+    id: "https://github.com/leanprover-community/mathlib4"
+    note: >-
+      Mathlib pinned at 56a005855ea17e0b0958f73ec801ae140b0a1679,
+      PR #27707 head 7df57a4044c8c8a00c44944786e838a24ee229cb.
+      Some proofs in SelectivePrimeSieve and OptimalSelberg adapt this
+      Apache-2.0 work, with attribution retained in the source and NOTICE.
+related_formalizations: []
+status:
+  scope: >-
+    Certified source claim: non-squarefree fixed-quarter Shiu
+    with quantifiers and fixed A,B hypotheses; k=1 derived corollary;
+    upper-right quadrant 1/4 <= alpha,beta < 1/2. Not the complete
+    original range 0 < alpha,beta < 1/2; no general claim for
+    alpha or beta below 1/4 and no real-endpoint generality.
+  # Counts apply to the proved Lean library and Solution only;
+  # the independent Challenge intentionally has 3 placeholders.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI", "Anthropic"]
+      framework: "ChatGPT with authorized Mac tool access and external proof specialists"
+      tool_setup: >-
+        Human-directed AI-assisted Lean formalization with pinned
+        compiler builds, separate source-custody checks, independent
+        specialist mathematical referee, and GitHub-hosted Linux replay.
+      cost:
+        wall_time: "Not tracked"
+        spend_usd: "Subscription-based; no auditable total"
+        hardware: "Local Mac plus GitHub-hosted Ubuntu verification"
+      prompting_notes: "Human specified scope, publication controls, and specialist review assignments."
+  spend_usd: "Not tracked"
+  notes: >-
+    Charlie Dorsey directed the project as the sole human source-code
+    contributor. An independent AI mathematical referee reviewed the
+    original source claims; all named project personas were AI systems.
+fidelity:
+  divergences: >-
+    The original theorem allows all 0 < alpha,beta < 1/2 and a
+    separate growth constant for each epsilon. The formal classical
+    terminal fixes alpha=beta=1/4, natural x,y, and a particular
+    B*n^(1/1280) bound; its upper-right quadrant is a monotonicity
+    consequence with a fixed B. Modulus one is a derived corollary.
+review:
+  status: "agent-reviewed"
+  reviewers: ["Orisel (independent AI referee)"]
+  notes: >-
+    An independent AI mathematical referee (Orisel) reviewed the exact
+    original theorem scopes, including k=1 and the
+    upper-right two-parameter consequence. The transformed module-mode
+    candidate 681e355148c4bd1ac656d45ed9de8598c4bdc4f9 passed
+    GitHub-hosted Linux compilation, all 8 examples, standard-axiom audits,
+    real Palomar Comparator, con-ron and NanoDa on November 9, 2026.
+    Not human peer review; no public-repository preflight or Palomar
+    registry submission has been conducted.
+
+alignment:
+  namespace: "Shiu.API"
+  statements:
+    - source: "Shiu (1980), fixed-quarter specialization"
+      lean: "Shiu.API.classical_quarter"
+      module: "Shiu.Classical"
+      status: "proved"
+      note: "Natural endpoints; independent uniform B*n^(1/1280) growth witness and fixed A,B."
+    - source: "Derived ordinary short-interval k=1 corollary"
+      lean: "Shiu.API.classical_modulus_one_quarter"
+      module: "Shiu.ModulusOneFinal"
+      status: "proved"
+      note: "Factor nine relative to the classical constant, no squarefree-support hypothesis."
+    - source: "Monotone upper-right quadrant consequence"
+      lean: "Shiu.API.classical_two_parameter_quadrant"
+      module: "Shiu.TwoParameter"
+      status: "proved"
+      note: "One uniform cutoff for 1/4 <= alpha,beta < 1/2; not the full original range."
+
+acknowledgements: >-
+  Built on Lean 4 and Mathlib. Adaptations of Arend Mellendijk's
+  selberg-sieve4 and Mathlib SelbergSieve are credited in the source
+  headers and NOTICE under Apache-2.0. The Palomar Comparator checks
+  the exact three theorem interfaces. Charlie Dorsey directed the
+  project as sole human source-code contributor; AI agents made
+  substantive contributions to proof development, review, testing
+  and documentation.

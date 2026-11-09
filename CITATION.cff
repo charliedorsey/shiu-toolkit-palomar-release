@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "Please cite this software package and its mathematical source."
+title: "Shiu Toolkit: Lean Formalization of a Fixed-Quarter Brun–Titchmarsh-Type Bound"
+authors:
+  - family-names: "Dorsey"
+    given-names: "Charlie"
+type: software
+repository-code: "https://github.com/charliedorsey/shiu-toolkit-palomar-release"
+abstract: >-
+  A Lean 4 fixed-quarter specialization of Shiu's multiplicative-function
+  estimate, with a derived k=1 theorem and upper-right two-parameter
+  monotonicity consequences. Human-directed development used substantive
+  AI assistance; proof verification is separate from human peer review.
+
+license: Apache-2.0
+references:
+  - type: article
+    authors:
+      - family-names: Shiu
+        given-names: Peter Man-Kit
+    title: "A Brun–Titchmarsh theorem for multiplicative functions"
+    year: 1980
+    journal: "Journal für die reine und angewandte Mathematik"
+    volume: "313"
+    start: "161"
+    end: "170"
+  - type: thesis
+    authors:
+      - family-names: Shiu
+        given-names: Peter Man-Kit
+    title: "Studies in Multiplicative Number Theory"
+    year: 1980
+    institution:
+      name: "University of Nottingham"
+    url: "https://eprints.nottingham.ac.uk/28304/1/281269.pdf"
+  - type: software
+    title: "selberg-sieve4"
+    authors:
+      - family-names: Mellendijk
+        given-names: Arend
+    url: "https://github.com/amellendijk/selberg-sieve4"
+  - type: software
+    title: "Mathlib"
+    url: "https://github.com/leanprover-community/mathlib4"

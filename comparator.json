@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Shiu.API.classical_quarter",
+    "Shiu.API.classical_modulus_one_quarter",
+    "Shiu.API.classical_two_parameter_quadrant"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

@@ -1,0 +1,45 @@
+Shiu Toolkit
+Human-directed, AI-assisted Lean formalization (2026), coordinated by Charlie Dorsey.
+
+Licensed under Apache License, Version 2.0. To the extent original material is
+eligible for copyright and controlled by the project, it is made available
+under this license. No exclusive copyright in purely AI-generated material
+is asserted by this NOTICE.
+
+This source package incorporates adaptations of third-party source code,
+all under the Apache License, Version 2.0, with original notices retained
+in the affected Lean files:
+
+* selberg-sieve4 by Arend Mellendijk (2023-2024 across source files)
+  https://github.com/amellendijk/selberg-sieve4
+  source revision 64530a38a1e7e32357e1be8462dbfce5e445919a
+  Adapted in:
+    src/PaperB/M4A/OptimalSelberg.lean
+    src/PaperB/M4A/OptimalSelbergAux.lean
+    src/PaperB/M4A/SelectedPrimeBoundSum.lean
+
+* Mathlib, Mathlib/NumberTheory/SelbergSieve.lean,
+  copyright (c) 2024 Arend Mellendijk and Mathlib contributors
+  https://github.com/leanprover-community/mathlib4
+  pinned revision 56a005855ea17e0b0958f73ec801ae140b0a1679
+  related PR #27707, head 7df57a4044c8c8a00c44944786e838a24ee229cb
+  Adapted in:
+    src/PaperB/M4A/OptimalSelberg.lean
+    src/PaperB/M4A/SelectivePrimeSieve.lean
+
+Historical source of mathematics, cited and not reproduced:
+P. M. Shiu, “A Brun–Titchmarsh theorem for multiplicative functions,”
+J. reine angew. Math. 313 (1980), 161–170.
+P. M. Shiu, Studies in Multiplicative Number Theory,
+PhD thesis, University of Nottingham (1980), Chapter 3.
+
+The original derivation and the upper-right parameter-range specialization
+are precisely described in the formalization and the public README. This
+NOTICE does not assert copyright over Shiu's mathematics, historical
+publications, external contributors' work, or any scanned thesis pages.
+
+Some source adaptations are similar to material carried in the separate
+PrimeNumberTheoremAnd repository. Whether that repository was a direct
+copy source remains unconfirmed by historical agent logs. The credited
+underlying authors are retained and the project will add an explicit
+source-of-copy notice if further evidence establishes direct reuse.
