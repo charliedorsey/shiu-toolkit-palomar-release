@@ -32,7 +32,7 @@ references:
     year: 1980
     institution:
       name: "University of Nottingham"
-    url: "https://eprints.nottingham.ac.uk/28304/1/281269.pdf"
+    url: "https://repository.nottingham.ac.uk/server/api/core/bitstreams/5422efbf-031e-4c68-9cfc-6eb74979b1bd/content"
   - type: software
     title: "selberg-sieve4"
     authors:

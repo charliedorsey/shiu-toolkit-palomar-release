@@ -1,8 +1,11 @@
 # Release verification and provenance
 
 This file accompanies the standalone Shiu Bounds Toolkit source distribution.
-It is reproducibility guidance, not a claim that the public registry has
-accepted or indexed the work.
+Palomar registered the verified source commit
+8c07d5427eca35ef6a176a91f48cc8d5413b2f1e as
+[version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000003&version=1) on November 10, 2026.
+This file identifies the precise verification boundary. Later repository
+edits do not automatically inherit that source certification.
 
 ## Prepublication source candidate
 
@@ -25,9 +28,14 @@ the [official Palomar predictive preflight](https://github.com/charliedorsey/shi
 and [Palomar closed-submission mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42692549841)
 on November 9, 2026. The associated automated editorial review reported
 no blocking issues and one nonblocking fidelity-metadata disclosure
-warning, addressed in the present metadata revision. The reviewer
-report and public registration remain separate; this revision must be
-verified under its own immutable commit.
+warning, addressed in the present metadata revision. The revised public source commit
+8c07d5427eca35ef6a176a91f48cc8d5413b2f1e subsequently passed official
+[preflight](https://github.com/charliedorsey/shiu-toolkit-palomar-release/actions/runs/42712515298),
+[Palomar mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42715092664),
+and [rendering](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42717259222),
+then became [registered version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000003&version=1) on November 10, 2026.
+An updated commit must pass its own verification before it can be registered
+as a new version.
 
 ## Reproducing the code checks
 

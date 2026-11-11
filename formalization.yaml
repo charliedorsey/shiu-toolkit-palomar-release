@@ -30,9 +30,13 @@ sources:
     authors: ["Peter Man-Kit Shiu"]
     type: "thesis"
     relationship: "background"
-    id: "https://eprints.nottingham.ac.uk/28304/1/281269.pdf"
-    location: "University of Nottingham, 1980, chapter 3"
-    note: "Bibliographic reference only; no right to reproduce scanned pages established."
+    id: "https://repository.nottingham.ac.uk/server/api/core/bitstreams/5422efbf-031e-4c68-9cfc-6eb74979b1bd/content"
+    location: "University of Nottingham, 1980, Chapter Three, pp. 24-50 (PDF pp. 30-56)"
+    note: >-
+      Direct university-hosted original PDF. The permanent institutional
+      thesis record is https://repository.nottingham.ac.uk/handle/123456789/54362. The repository identifies
+      the work as All Rights Reserved. No right to redistribute
+      scanned thesis pages is asserted.
   - title: "selberg-sieve4"
     authors: ["Arend Mellendijk"]
     type: "formalization"

@@ -7,9 +7,27 @@ ordinary short intervals at modulus one, and a restricted two-parameter
 region.
 
 **License:** Apache-2.0, with preserved third-party notices in
-[NOTICE](NOTICE). This README documents the publicly available proof
-source. Making a source repository public is separate from publicly
-registering its formalization with Palomar.
+[NOTICE](NOTICE). The code license does not license Shiu's historical thesis.
+
+**Palomar registration:** [Shiu Bounds Toolkit](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000003) is a publicly
+registered Lean formalization. The registered versions certify exact source
+commits; later repository changes are not automatically certified.
+
+## Read Shiu's original theorem and proof
+
+**[Open the original 1980 thesis PDF, Chapter Three](https://repository.nottingham.ac.uk/server/api/core/bitstreams/5422efbf-031e-4c68-9cfc-6eb74979b1bd/content#page=30).**
+
+Peter Man-Kit Shiu's *Studies in Multiplicative Number Theory*, Chapter Three,
+"A Brun-Titchmarsh Theorem for Multiplicative Functions", occupies **printed
+pages 24-50** (**PDF pages 30-56**) of the original 120-page thesis. This is a
+direct link to the scanned original hosted by the University of Nottingham,
+not a paywalled journal link. The
+[university's permanent thesis record](https://repository.nottingham.ac.uk/handle/123456789/54362) provides its catalog details.
+
+The historical theorem has a broader parameter range than the fixed-quarter
+specialization proved here. The precise difference is stated below under
+[What it does not prove](#what-it-does-not-prove). The scanned thesis is linked
+from its institutional host and is **not redistributed in this repository**.
 
 ## The mathematical results
 
@@ -113,6 +131,15 @@ metadata revision. Neither the original checks nor the review automatically
 certify a later commit. See [RELEASE_PROVENANCE.md](RELEASE_PROVENANCE.md)
 for the verification boundary.
 
+The later public source commit
+8c07d5427eca35ef6a176a91f48cc8d5413b2f1e passed the
+[official Palomar preflight](https://github.com/charliedorsey/shiu-toolkit-palomar-release/actions/runs/42712515298),
+[closed mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42715092664),
+and [rendering](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/42717259222);
+it became [registered version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000003&version=1) on November 10, 2026.
+Later GitHub edits do not modify that immutable snapshot or inherit its
+verification without a new Palomar submission.
+
 For a trusted Linux environment with the Palomar Comparator toolchain
 installed and Bubblewrap enabled, run:
 
@@ -130,8 +157,9 @@ source-facing proofs; this was *not* human journal peer review.
 P. M. Shiu, “A Brun–Titchmarsh theorem for multiplicative functions,”
 *Journal für die reine und angewandte Mathematik* **313** (1980),
 161–170. See also Shiu's 1980 Nottingham thesis,
-*Studies in Multiplicative Number Theory*, chapter 3
-([archive link](https://eprints.nottingham.ac.uk/28304/1/281269.pdf)).
+*Studies in Multiplicative Number Theory*, Chapter Three
+([original university-hosted PDF](https://repository.nottingham.ac.uk/server/api/core/bitstreams/5422efbf-031e-4c68-9cfc-6eb74979b1bd/content),
+[permanent repository record](https://repository.nottingham.ac.uk/handle/123456789/54362)).
 
 Four Selberg-sieve modules adapt Apache-2.0 code from
 Arend Mellendijk's `selberg-sieve4` development and Mathlib's
@@ -147,6 +175,6 @@ development, source adaptations, testing, review, and documentation.
 The bibliographic author field records human responsibility, not a
 claim of exclusive copyright in autonomous machine-generated text.
 
-This source repository and its verification runs are not a public Palomar
-registry entry or journal publication. Registration and publication require
-separate, explicit approval by the responsible maintainer.
+This is the source repository for a
+[Palomar-registered formalization](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000003), not a journal publication.
+The evidence for each registered version applies to its exact source commit.
